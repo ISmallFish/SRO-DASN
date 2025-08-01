@@ -17,15 +17,18 @@ You're also welcome to explore, use, or improve the code as part of this open-so
   The corresponding implementation and source files can be found in the `ANF-Generator-BabbleNoise` directory.
 
 - **Data with Sampling Rate Offset (SRO)**  
-  This is based on the method described in [2], and we have extended the original dataset accordingly.  
-  Since the extended dataset is developed based on [2], we made some adjustments to the original data generation code.  
-  The specific modifications can be found in `SomeMod_DataGen' named:  
+  We extended the dataset released in [2] to enrich the acoustic scenarios and cover more diverse and realistic conditions.  
+  This extension was built upon their open-source implementation, available at:  
+  [https://github.com/fgnt/paderwasn/tree/main/paderwasn/databases](https://github.com/fgnt/paderwasn/tree/main/paderwasn/databases)
+
+  To support the extended setup, we made several modifications to the original data generation pipeline.  
+  These changes are implemented in the `SomeMod_DataGen` module, specifically in the following files:  
   - `create_json.py`  
   - `write_files.py`  
   - `audio_generation.py`
 
-- **Configuration Files**  
-  All configuration files related to data generation (including initial and intermediate files) are located in the `SomeMod_DataGen\db_json_sv` folder.
+  In addition, all configuration files related to data generation — including both initial settings and intermediate outputs — are organized under the `SomeMod_DataGen/db_json_sv` directory.
+
 ### References
 
 [1] E. A. P. Habets, I. Cohen, and S. Gannot, *"Generating nonstationary multisensor signals under a spatial coherence constraint"*, **J. Acoust. Soc. Am.**, vol. 124, no. 5, pp. 2911–2917, Nov. 2008.
