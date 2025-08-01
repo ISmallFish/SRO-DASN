@@ -33,5 +33,5 @@ You're also welcome to explore, use, or improve the code as part of this open-so
 
 [1] E. A. P. Habets, I. Cohen, and S. Gannot, *"Generating nonstationary multisensor signals under a spatial coherence constraint"*, **J. Acoust. Soc. Am.**, vol. 124, no. 5, pp. 2911–2917, Nov. 2008.
 
-[2] T. Gburrek, J. Schmalenstroeer, and R. Haeb-Umbach, *"On synchronization of wireless acoustic sensor networks in the presence of time-varying sampling rate offsets and speaker changes"*, in *Proc. IEEE Int. Conf. Acoust., Speech, Signal Process. (ICASSP)*, 2022, pp. 916–920.
+[2] T. Gburrek, J. Schmalenstroeer, and R. Haeb-Umbach, *"On synchronization of wireless acoustic sensor networks in the presence of time-varying sampling rate offsets and speaker changes"*, in **Proc. IEEE Int. Conf. Acoust., Speech, Signal Process.**, 2022, pp. 916–920.
 
