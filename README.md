@@ -27,7 +27,7 @@ This extension is built upon their open-source implementation, which is availabl
 [https://github.com/fgnt/paderwasn/tree/main/paderwasn/databases](https://github.com/fgnt/paderwasn/tree/main/paderwasn/databases)
 
 To support the extended setup, we modified parts of the original data generation pipeline.  
-These changes are included in the `SomeMod_DataGen` module, specifically in the following files:
+These changes are included in the `SomeMod_DataGen`, specifically in the following files:
 
 - `create_json.py`  
 - `write_files.py`  
