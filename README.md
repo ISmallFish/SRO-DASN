@@ -2,7 +2,7 @@
 
 ## RPM Method
 
-The Python implementation of the **RPM (Real Part Maximization)** method proposed in the paper *"Online Sampling Rate Offset Estimation via Real Part Maximization"* can be found in the file `xxx`. 
+The Python implementation of the **RPM (real part maximization)** method proposed in the paper *"Online Sampling Rate Offset Estimation via Real Part Maximization"* can be found in the file `RPM_PythonVer`. 
 
 Some comments have been added to help align the code with the corresponding equations in the paper.
 
