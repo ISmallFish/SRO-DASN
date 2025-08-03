@@ -70,8 +70,8 @@ for cal_RTF in tqdm(range(1)): # for cal RTF
         frame1         = x1[start:end] * window
         frame2         = x2[start:end] * window
         
-        X1[:, ell]       = np.fft.rfft(frame1, n = K)
-        X2[:, ell]       = np.fft.rfft(frame2, n = K)
+        X1[:, ell]     = np.fft.rfft(frame1, n = K)
+        X2[:, ell]     = np.fft.rfft(frame2, n = K)
 
         # eq.(7)
         CS             = X1[:, ell]*np.conj(X2[:, ell])
@@ -118,13 +118,13 @@ for cal_RTF in tqdm(range(1)): # for cal RTF
             # eq.(49)
             X_curr          = X_lookahead + lamda_2 * grad
             # ------------------------------------------------- #
-            sro_Arr[ell]      = X_curr
+            sro_Arr[ell]    = X_curr
             X_past_past     = X_past
             X_past          = X_curr
             
-sro_MtLb = np.vstack((np.zeros((L, 1)), sro_MtLb))
-sro_Arr  = 1e6 * sro_Arr / 16e3
-sro_MtLb = 1e6 * sro_MtLb / 16e3
+sro_MtLb   = np.vstack((np.zeros((L, 1)), sro_MtLb))
+sro_Arr    = 1e6 * sro_Arr / 16e3
+sro_MtLb   = 1e6 * sro_MtLb / 16e3
 
 num_frames = len(sro_Arr)
 
