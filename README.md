@@ -9,7 +9,10 @@ The Python implementation of the **RPM (Real Part Maximization)** method propose
 
 We have added inline comments to help align the code with the equations presented in the paper, making it easier to follow and verify.
 
-![SRO Estimation Result](sro_estimation_plot.png)
+<p align="center">
+  <img src="sro_estimation_plot.png" width="600"><br>
+  <em>Figure: SRO Estimation Results (Python vs Matlab)</em>
+</p>
 
 If you have any questions, feel free to reach out via [gshanzheng@foxmail.com](mailto:gshanzheng@foxmail.com).
 
