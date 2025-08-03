@@ -4,14 +4,6 @@ import matplotlib.pyplot as plt
 from tqdm import tqdm
 import scipy.io as scio
 
-def func_GenMat_B(L, L_range):
-
-    B_full      = np.tril(np.ones((L, L)))
-
-    row_indices = np.array(L_range) - 1  
-
-    return B_full[row_indices, :]
-
 # ========================================================================= #
 #         Configuration of the Hyperparameters of RPM Method.               #
 # ========================================================================= #
@@ -66,7 +58,7 @@ buff_NCS    = np.zeros((K//2+1,   L+1), dtype = dtype)
 
 sro_Arr     = np.zeros((nfrm,1))
 
-for cal_RTF in tqdm(range(100)): # for cal RTF
+for cal_RTF in tqdm(range(1)): # for cal RTF
 
     for ell in range(nfrm):
 
@@ -130,14 +122,37 @@ for cal_RTF in tqdm(range(100)): # for cal RTF
             X_past_past     = X_past
             X_past          = X_curr
             
+sro_MtLb = np.vstack((np.zeros((L, 1)), sro_MtLb))
+sro_Arr  = 1e6 * sro_Arr / 16e3
+sro_MtLb = 1e6 * sro_MtLb / 16e3
 
-sro_MtLb = np.vstack((np.zeros((L,1)), sro_MtLb))
+num_frames = len(sro_Arr)
 
-sro_Arr  = 1e6*sro_Arr/16e3
-sro_MtLb = 1e6*sro_MtLb/16e3
+# ======================================================== #
+frame_duration_min = 2048 / 16000 / 60  
 
-plt.plot(sro_Arr,  label='Python - Res')
-plt.plot(sro_MtLb, label='MatLab - Res')
-plt.legend()
+xtick_locs = list(range(0, num_frames, 468))
+if xtick_locs[-1] != num_frames - 1:
+    xtick_locs.append(num_frames - 1)
+
+xtick_labels = [f"{loc * frame_duration_min:.1f}" for loc in xtick_locs]
+
+plt.figure(figsize=(10, 5))
+plt.plot(sro_Arr, label='Python - Res', linewidth=2)
+plt.plot(sro_MtLb, label='Matlab - Res', linewidth=2, linestyle='--')
+
+plt.ylim(-10, 150)
+plt.xticks(xtick_locs, xtick_labels)
+
+plt.xlabel('Time (minutes)', fontsize=12)
+plt.ylabel('SRO (ppm)', fontsize=12)
+plt.title('Online Sampling Rate Offset Estimation via Real Part Maximization', fontsize=14)
+plt.grid(True, linestyle='--', alpha=0.6, axis='x')
+plt.legend(fontsize=11)
+plt.tight_layout()
+plt.xticks(fontsize=10)
+plt.yticks(fontsize=10)
+
+plt.savefig("sro_estimation_plot.png", dpi=300, bbox_inches='tight')
 plt.show()
-
+# ======================================================== #
