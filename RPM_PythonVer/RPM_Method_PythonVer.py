@@ -23,7 +23,7 @@ L          = Ls*Lh
 window     = blackman(K, sym = False) 
 
 
-idx_left   = np.arange(L-2,-1,-Lh)
+idx_left   = np.arange(L-Lh,-1,-Lh)
 idx_right  = L*np.ones_like(idx_left)
 
 fs         = 16000           
@@ -156,3 +156,4 @@ plt.yticks(fontsize=10)
 plt.savefig("sro_estimation_plot.png", dpi=300, bbox_inches='tight')
 plt.show()
 # ======================================================== #
+
